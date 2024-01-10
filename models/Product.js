@@ -27,7 +27,7 @@ const ProductSchema = new mongoose.Schema({
             {
                 size: {
                     type: String,
-                    requred: true,
+                    required: true,
                 },
                 isSelcted: {
                     type: Boolean,
@@ -42,7 +42,7 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    desription: {
+    description: {
         type: String,
         required: true,
     }
