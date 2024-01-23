@@ -3,8 +3,9 @@ const Product = require("../models/Product");
 
 module.exports = {
     createProduct: async (req, res) => {
-        const newProduct = new Product(req.body);
+        
         try {
+            const newProduct = new Product(req.body);
             await newProduct.save();
             res.status(201).json({ message: "Product created", product: newProduct });
         } catch (error) {
@@ -16,8 +17,10 @@ module.exports = {
 
     getAllProduct: async (req, res) => {
         try {
-            const products = await Product.find().sort[{ createdAt: -1 }];
-            res.status(200).json(products);
+            console.log({Product})
+            const products = await Product.find();
+            console.log({products})
+            res.status(200).json({products});
             
         } catch (error) {
             res.status(500).json("Error in getting all products")
